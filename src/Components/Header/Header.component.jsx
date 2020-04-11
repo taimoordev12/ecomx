@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {firebaseAppAuth} from '../../firebase/firebase.util';
 import '../Header/Header.style.css';
+import {connect} from 'react-redux';
 import {
   Collapse,
   Navbar,
@@ -9,11 +10,7 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText
+ 
 } from 'reactstrap';
 
 const Header = ({currentuser}) => {
@@ -51,4 +48,7 @@ const Header = ({currentuser}) => {
   );
 }
 
-export default Header;
+const mapStateToProps =state=>({
+  currentuser:state.user.currentuser
+})
+export default connect(mapStateToProps)(Header);

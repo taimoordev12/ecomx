@@ -5,7 +5,6 @@ import CustomButton from '../custom-button/custom-button.component'
 import {firebaseAppAuth,SignInWithGoogle} from '../../firebase/firebase.util.js';
 
 
-
 export default class Signin extends Component {
     constructor(){
         super();

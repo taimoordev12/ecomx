@@ -45,7 +45,7 @@ class App extends Component {
    { 
      return (
     <React.Fragment>
-    <Header currentuser={this.state.currentuser}/>
+    <Header />
     <Switch>
  <Route exact path='/' component={HomePage}/>
  <Route path='/shop' component={Shop}/>
