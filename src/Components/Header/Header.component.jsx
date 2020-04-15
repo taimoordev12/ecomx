@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {firebaseAppAuth} from '../../firebase/firebase.util';
 import '../Header/Header.style.css';
 import {connect} from 'react-redux';
+import CartIcon from '../cart-icon/cart-icon.component';
 import {
   Collapse,
   Navbar,
@@ -39,6 +40,9 @@ const Header = ({currentuser}) => {
            <NavLink href="/signin">Sign In</NavLink>
          </NavItem>
           }
+           <NavItem>
+             <CartIcon/>
+            </NavItem>
            
            
           </Nav>
