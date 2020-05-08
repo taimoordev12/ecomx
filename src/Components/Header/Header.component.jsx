@@ -3,6 +3,9 @@ import {firebaseAppAuth} from '../../firebase/firebase.util';
 import '../Header/Header.style.css';
 import {connect} from 'react-redux';
 import CartIcon from '../cart-icon/cart-icon.component';
+import {selectCurrentUser} from '../../redux/user/user.reselect';
+import {createStructuredSelector} from 'reselect'
+import {selectCartHidden} from '../../redux/cart/cart.reselect';
 import {
   Collapse,
   Navbar,
@@ -13,8 +16,9 @@ import {
   NavLink,
  
 } from 'reactstrap';
+import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 
-const Header = ({currentuser}) => {
+const Header = ({currentuser,hidden}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -43,7 +47,7 @@ const Header = ({currentuser}) => {
            <NavItem>
              <CartIcon/>
             </NavItem>
-           
+           {hidden ? null :<CartDropdown/>}
            
           </Nav>
         </Collapse>
@@ -52,7 +56,8 @@ const Header = ({currentuser}) => {
   );
 }
 
-const mapStateToProps =state=>({
-  currentuser:state.user.currentuser
+const mapStateToProps =createStructuredSelector({
+  currentuser:selectCurrentUser,
+  hidden:selectCartHidden
 })
 export default connect(mapStateToProps)(Header);
