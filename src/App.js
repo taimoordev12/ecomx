@@ -52,7 +52,6 @@ class App extends Component {
  <Route path='/cart' component={cart}/>
 
  <Route exact path='/signin' render={()=>this.props.currentuser ? <Redirect to='/' />:<Signinpage></Signinpage>}/>
-
  </Switch>
  </React.Fragment>
 

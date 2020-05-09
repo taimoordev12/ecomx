@@ -9,6 +9,11 @@ export  const addItems= item=>({
 })
 
 export  const ClearItems= item=>({
-   type: cartTypes.CLEAR_ITEMS,
+   type: cartTypes.CLEAR_ITEMS_FROM_CART,
    payload:item,
 })
+export  const RemoveItems= item=>({
+   type: cartTypes.REMOVE_ITEMS,
+   payload:item,
+})
+

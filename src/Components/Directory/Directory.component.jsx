@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Container, Row } from 'reactstrap';
 import Menuitem from '../Menu-item/Menu-item.component';
 
-
 export default class Directory extends Component {
     constructor() {
    super ();
@@ -50,6 +49,8 @@ export default class Directory extends Component {
                  </Row>   
               </Container>  
         )
+
     }
 }
+
 
