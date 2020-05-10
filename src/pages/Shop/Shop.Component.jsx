@@ -1,19 +1,17 @@
 import React, { Component } from 'react'
-import SHOP_DATA from './2.2 shop.data.js';
 import {Container,Row} from 'reactstrap';
+import {selectShopItem} from '../../redux/shop/shop.reselect';
+import {createStructuredSelector} from 'reselect';
+import {connect} from 'react-redux';
 import Collectionpreview from '../../Components/Collection-preview/Collection-preview.component';
 
-export default class Shop extends Component {
-    constructor(props)
-    {
-        super(props);
-        this.state={collections:SHOP_DATA }
-    }
+ class Shop extends Component {
+  
     render() {
         return (
               <Container>
                 <Row>
-                  {this.state.collections.map(({id,...othercollections})=>(<Collectionpreview key={id} {...othercollections} />
+                  {this.props.shop.map(({id,...othercollections})=>(<Collectionpreview key={id} {...othercollections} />
                   ))}
              
                  </Row>   
@@ -21,3 +19,7 @@ export default class Shop extends Component {
         )
     }
 }
+const mapStateToProps =createStructuredSelector({
+    shop: selectShopItem
+})
+export default connect( mapStateToProps )(Shop)
