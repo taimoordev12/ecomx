@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/ecomx/static/css/main.8ee7fc9a.chunk.css",
+    "main.js": "/ecomx/static/js/main.67011942.chunk.js",
+    "main.js.map": "/ecomx/static/js/main.67011942.chunk.js.map",
+    "runtime-main.js": "/ecomx/static/js/runtime-main.15854b35.js",
+    "runtime-main.js.map": "/ecomx/static/js/runtime-main.15854b35.js.map",
+    "static/css/2.47e06e2e.chunk.css": "/ecomx/static/css/2.47e06e2e.chunk.css",
+    "static/js/2.df8ebb24.chunk.js": "/ecomx/static/js/2.df8ebb24.chunk.js",
+    "static/js/2.df8ebb24.chunk.js.map": "/ecomx/static/js/2.df8ebb24.chunk.js.map",
+    "index.html": "/ecomx/index.html",
+    "precache-manifest.c49e24016ea71767c0610387f7494adc.js": "/ecomx/precache-manifest.c49e24016ea71767c0610387f7494adc.js",
+    "service-worker.js": "/ecomx/service-worker.js",
+    "static/css/2.47e06e2e.chunk.css.map": "/ecomx/static/css/2.47e06e2e.chunk.css.map",
+    "static/css/main.8ee7fc9a.chunk.css.map": "/ecomx/static/css/main.8ee7fc9a.chunk.css.map",
+    "static/js/2.df8ebb24.chunk.js.LICENSE.txt": "/ecomx/static/js/2.df8ebb24.chunk.js.LICENSE.txt",
+    "static/media/E2.png": "/ecomx/static/media/E2.4e3ed8a9.png",
+    "static/media/b2.jpg": "/ecomx/static/media/b2.cf2715a4.jpg",
+    "static/media/bag.30f07071.svg": "/ecomx/static/media/bag.30f07071.svg",
+    "static/media/e4.jpg": "/ecomx/static/media/e4.33af8e4c.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.15854b35.js",
+    "static/css/2.47e06e2e.chunk.css",
+    "static/js/2.df8ebb24.chunk.js",
+    "static/css/main.8ee7fc9a.chunk.css",
+    "static/js/main.67011942.chunk.js"
+  ]
+}
