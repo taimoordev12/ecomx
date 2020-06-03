@@ -1,4 +1,5 @@
 import React from 'react'
+import CustomBtn from '../../Components/custom-button/custom-button.component';
 import { Container, Row, Col } from 'reactstrap';
 import {selectCartItem} from '../../redux/cart/cart.reselect';
 import {selectCartTotal} from '../../redux/cart/cart.reselect';
@@ -9,7 +10,7 @@ import CartPageItem from '../../Components/cart-page-item/cart-page-item.compone
 
 
 
-const cart=({cartItems,cartTotal}) => {
+const cart=({cartItems,cartTotal,history}) => {
     return (
       <React.Fragment>
         <Container className="mt-5 mt-5">
@@ -26,6 +27,11 @@ const cart=({cartItems,cartTotal}) => {
        <Container>
          <Row>   
           <Col md="12" className="text-right mt-5"><h3>total:${cartTotal}</h3></Col>
+        </Row>
+        </Container>
+        <Container>
+         <Row>   
+          <Col md="12" className="text-right mt-5"><CustomBtn onClick={()=>{history.push('/checkout')}}>Proceed to Checkout</CustomBtn></Col>
         </Row>
         </Container>
        </React.Fragment>

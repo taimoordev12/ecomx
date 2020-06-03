@@ -11,6 +11,9 @@ import cart from './pages/cart/cart.component';
 import {setCurrentUser} from './redux/user/user-actions';
 import {selectCurrentUser} from './redux/user/user.reselect';
 import {createStructuredSelector} from 'reselect'
+import Footer from './Components/Footer/Footer.component';
+import Checkout from './pages/Checkout/Checkout.component';
+import Success from './pages/Success/Success.component';
 class App extends Component {
  
   unSubscribeFromAuth = null;
@@ -50,9 +53,15 @@ class App extends Component {
  <Route exact path='/' component={HomePage}/>
  <Route path='/shop' component={Shop}/>
  <Route path='/cart' component={cart}/>
+ <Route path='/checkout' component={Checkout}/>
+ <Route path='/Success' component={Success}/>
+
+
 
  <Route exact path='/signin' render={()=>this.props.currentuser ? <Redirect to='/' />:<Signinpage></Signinpage>}/>
  </Switch>
+ <Footer/>
+
  </React.Fragment>
 
 )}

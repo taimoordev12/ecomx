@@ -6,6 +6,7 @@ import CartIcon from '../cart-icon/cart-icon.component';
 import {selectCurrentUser} from '../../redux/user/user.reselect';
 import {createStructuredSelector} from 'reselect'
 import {selectCartHidden} from '../../redux/cart/cart.reselect';
+import E2 from '../../assets/images/E2.png';
 import {
   Collapse,
   Navbar,
@@ -26,7 +27,7 @@ const Header = ({currentuser,hidden}) => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">Ecomx</NavbarBrand>
+        <NavbarBrand href="/"><img src={E2} className="img-fluid w-50" alt=""/></NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
