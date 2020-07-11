@@ -5,7 +5,7 @@ import {selectDirectoryItem} from '../../redux/directory/directory.reselect';
 import {createStructuredSelector} from 'reselect';
 import {connect} from 'react-redux';
 class Directory extends Component {
-   
+    
     render() {
         return (
               <Container className='mt-5'>

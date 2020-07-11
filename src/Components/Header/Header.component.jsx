@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import {firebaseAppAuth} from '../../firebase/firebase.util';
 import '../Header/Header.style.css';
 import {connect} from 'react-redux';
@@ -7,6 +7,7 @@ import {selectCurrentUser} from '../../redux/user/user.reselect';
 import {createStructuredSelector} from 'reselect'
 import {selectCartHidden} from '../../redux/cart/cart.reselect';
 import E2 from '../../assets/images/E2.png';
+import axios from 'axios';
 import {
   Collapse,
   Navbar,
@@ -21,13 +22,34 @@ import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 
 const Header = ({currentuser,hidden}) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [LogoUrl, setLogoUrl] = useState('false');
+
+
+ useEffect(() => {
+  axios.get('/api/logo')
+  .then(function (res) {
+    // handle success
+    console.log(res);
+    setLogoUrl(res.data[0].imageData);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .finally(function () {
+    // always executed
+  });
+
+
+},[]);
+
 
   const toggle = () => setIsOpen(!isOpen);
 
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/"><img src={E2} className="img-fluid w-50" alt=""/></NavbarBrand>
+        <NavbarBrand href="/"><img src={LogoUrl==''?E2:LogoUrl} className="img-fluid w-25 " alt="" /></NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>

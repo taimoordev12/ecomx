@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {Col,Row,Container} from 'reactstrap';
 import CollectionItem from '../../Components/Collection-item/CollectionItem.component';
 
+
  const Collection=({collection})=> {
 const {title, items} = collection;
     return (

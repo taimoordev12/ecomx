@@ -15,7 +15,7 @@ const CartPageItem=({cartItems,clearItem,removeItem,addItem})=> {
             <Row>
         <Col md="3"><img src={imageUrl} className="image-fluid w-50" alt="item"/></Col>
     <Col className="text-center my-auto" md="3"><h6>{name}</h6></Col>
-    <Col className="text-center my-auto" md="3"><h6>${price}</h6></Col>
+    <Col className="text-center my-auto" md="3"><h6>Rs. {price}</h6></Col>
     <Col className="text-center my-auto" md="2"><h6><span className="mr-2 font-weight-bold pointer" onClick={()=>removeItem(cartItems)}>&#x276E;</span>{quantity}<span className="ml-2 font-weight-bold pointer" onClick={()=>addItem(cartItems)}>&#x276F;</span></h6></Col>
         <Col className="text-center my-auto pointer" md="1" onClick={()=>clearItem(cartItems)}><h6>&#10005;</h6></Col>
         </Row>

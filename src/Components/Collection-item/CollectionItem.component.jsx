@@ -4,10 +4,17 @@ import CustomBtn from '../custom-button/custom-button.component';
 import {addItems} from '../../redux/cart/cart-action';
 import {connect} from 'react-redux';
 import '../Collection-item/CollectionItem.style.css';
-const CollectionItem =({items,addItems}) => (
-    <React.Fragment>
+import {Link} from 'react-router-dom';
+
+const CollectionItem =({items,addItems}) => {
+
+  return (
+<React.Fragment>
  <Col  md={3} className="mt-5 ">
-    <img className=" collection-img" src={items.imageUrl}/>
+      <Link to={{
+    pathname: "/product/:"+items.name,
+   state:items
+       }} ><img className=" collection-img" src={items.imageUrl}/></Link>
    
     <p>PKR {items.price}</p>
 
@@ -16,8 +23,8 @@ const CollectionItem =({items,addItems}) => (
 
     </Col>
     
-    </React.Fragment>
-)
+    </React.Fragment> )
+  }
 const mapDispatchToprops= dispatch=>({
     addItems:items=>dispatch(addItems(items))
   });

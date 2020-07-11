@@ -14,6 +14,7 @@ import {createStructuredSelector} from 'reselect'
 import Footer from './Components/Footer/Footer.component';
 import Checkout from './pages/Checkout/Checkout.component';
 import Success from './pages/Success/Success.component';
+import  ProductPage from '../src/pages/Product-Page/ProductPage.component';
 class App extends Component {
  
   unSubscribeFromAuth = null;
@@ -55,6 +56,8 @@ class App extends Component {
  <Route path='/cart' component={cart}/>
  <Route path='/checkout' component={Checkout}/>
  <Route path='/Success' component={Success}/>
+ <Route path='/product/:collectionId' component={ProductPage}/>
+
 
 
 

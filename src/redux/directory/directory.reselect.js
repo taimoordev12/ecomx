@@ -4,5 +4,5 @@ const selectDirectory = (state) => state.directory;
 
 export const selectDirectoryItem= createSelector(
   [selectDirectory],
-  (directory) => directory.sections,
+  (directory) => directory.catagories,
 );
