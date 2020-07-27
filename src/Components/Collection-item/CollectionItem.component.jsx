@@ -7,14 +7,13 @@ import '../Collection-item/CollectionItem.style.css';
 import {Link} from 'react-router-dom';
 
 const CollectionItem =({items,addItems}) => {
-
   return (
 <React.Fragment>
  <Col  md={3} className="mt-5 ">
       <Link to={{
     pathname: "/product/:"+items.name,
    state:items
-       }} ><img className=" collection-img" src={items.imageUrl}/></Link>
+       }} ><img className=" collection-img" src={items.imagesUrls[0]}/></Link>
    
     <p>PKR {items.price}</p>
 

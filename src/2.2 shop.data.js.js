@@ -7,12 +7,32 @@ const SHOP_DATA = [
       {
         id: 1,
         name: 'Brown Brim',
-        imageUrl: 'https://i.ibb.co/ZYW3VTp/brown-brim.png',
-        price: 25
+        description:'lorem is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using   making it look like readable English.',
+        price: 25,
+        variants: {
+          variant1: {
+            name:'color',
+            options:['yellow','blue','green'],
+            price:123
+          },
+          variant2: {
+            name:'size',
+            options:['8','9','10'],
+            price:100
+          },
+          variant3: {
+            name:'cutting',
+            options:['small','large','medium'],
+            price:100
+          }
+
+        }
       },
       {
         id: 2,
         name: 'Blue Beanie',
+        description:'lorem is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using   making it look like readable English.',
+
         imageUrl: 'https://i.ibb.co/ypkgK0X/blue-beanie.png',
         price: 18
       },

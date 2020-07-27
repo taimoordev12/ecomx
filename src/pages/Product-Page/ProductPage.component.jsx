@@ -22,7 +22,7 @@ return(
     <div className="row wow fadeIn">
       {/*Grid column*/}
       <div className="col-md-6 mb-4 text-center">
-        <img src={prodData.imageUrl} className="img-fluid" alt="" />
+        <img src={prodData.imagesUrls[0]} className="img-fluid" alt="" />
       </div>
       {/*Grid column*/}
       {/*Grid column*/}
@@ -46,10 +46,44 @@ return(
             </span>
         
           </p>
+
+         
 <p className="lead font-weight-bold">{prodData.name}</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolor suscipit libero eos atque quia ipsa
-            sint voluptatibus!
-            Beatae sit assumenda asperiores iure at maxime atque repellendus maiores quia sapiente.</p>
+<p>{prodData.description ? prodData.description:'' }</p>
+{prodData.variants?
+          
+           <div className="mt-3 mb-3">
+                <p className='mb-0'>{prodData.variants.variant1.name}</p>    
+               {prodData.variants.variant1 ?
+                  
+                  <select name="" className='w-50' id="">
+                  {prodData.variants.variant1.options.map(option=><option value={option}>{option}</option>)}
+                    </select>
+                  
+
+               :''}
+  <p className='mt-2 mb-0'>{prodData.variants.variant2.name}</p>
+{prodData.variants.variant2 ?
+
+                  <select name="" className='w-50' id="">
+                  {prodData.variants.variant2.options.map(option=><option value={option}>{option}</option>)}
+                    </select>
+                    
+               :''}
+
+<p className='mt-2 mb-0'>{prodData.variants.variant3.name}</p>
+{prodData.variants.variant3 ?
+
+                  <select name="" className='w-50' id="">
+                  {prodData.variants.variant3.options.map(option=><option value={option}>{option}</option>)}
+                    </select>
+                    
+               :''}
+         
+          </div>
+
+          :
+          '' }
           <form className="d-flex justify-content-left">
             {/* Default input */}
             <h6 className="mr-5 mt-2"><span className="mr-5 font-weight-bold pointer" onClick={()=>removeItem(prodData)}>&#x276E;</span>{typeof item === 'undefined'? 0 :item.quantity }<span className="ml-5 font-weight-bold pointer" onClick={()=>{addItem(prodData);setCount(count + 1)}}>&#x276F;</span></h6>
@@ -77,21 +111,12 @@ return(
     </div>
     {/*Grid row*/}
     {/*Grid row*/}
-    <div className="row wow fadeIn">
+    <div className="row wow fadeIn text-center">
       {/*Grid column*/}
-      <div className="col-lg-4 col-md-12 mb-4">
-        <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/11.jpg" className="img-fluid" alt="" />
-      </div>
-      {/*Grid column*/}
-      {/*Grid column*/}
-      <div className="col-lg-4 col-md-6 mb-4">
-        <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/12.jpg" className="img-fluid" alt="" />
-      </div>
-      {/*Grid column*/}
-      {/*Grid column*/}
-      <div className="col-lg-4 col-md-6 mb-4">
-        <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg" className="img-fluid" alt="" />
-      </div>
+      {prodData.imagesUrls.map(img=> <div className={`${prodData.imagesUrls.length==1 ?'col-lg-12 d-none col-md-12':''} ${prodData.imagesUrls.length==3 ?'col-lg-4 col-md-12':'col-lg-6 col-md-12'}  mb-4`}>
+        <img src={img} className="img-fluid" alt="" />
+      </div>)}
+    
       {/*Grid column*/}
     </div>
     {/*Grid row*/}

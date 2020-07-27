@@ -4,8 +4,12 @@ import Menuitem from '../Menu-item/Menu-item.component';
 import {selectDirectoryItem} from '../../redux/directory/directory.reselect';
 import {createStructuredSelector} from 'reselect';
 import {connect} from 'react-redux';
+import {getDirectories} from '../../redux/directory/directory.action';
 class Directory extends Component {
-    
+  componentDidMount(){
+    this.props.getDirectories();
+  }
+   
     render() {
         return (
               <Container className='mt-5'>
@@ -13,7 +17,7 @@ class Directory extends Component {
                   {this.props.sections.map(({title,id,imageUrl,size,linkUrl})=>(<Menuitem key={id} img={imageUrl} link={linkUrl} title={title} size={size} linkUrl={linkUrl}/>
                   ))}
              
-                 </Row>   
+                 </Row>     
               </Container>  
         )
 
@@ -22,5 +26,5 @@ class Directory extends Component {
  const mapStateToProps =createStructuredSelector({
     sections:selectDirectoryItem
  })
-export default connect(mapStateToProps)(Directory)
+export default connect(mapStateToProps,{getDirectories})(Directory)
 

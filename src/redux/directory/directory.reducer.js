@@ -1,3 +1,4 @@
+import  {directoryTypes} from '../directory/directory.type';
 const INTIAL_STATE = {
   catagories:[ {
     title: 'hats',
@@ -36,6 +37,11 @@ const INTIAL_STATE = {
 
 const directoryReducer=(state=INTIAL_STATE,action)=>{
     switch (action.type){
+      case  directoryTypes.GET_DIRECTORIES:
+        return {
+          ...state,
+          catagories:action.payload,
+        }
         default:
             return state;
     }

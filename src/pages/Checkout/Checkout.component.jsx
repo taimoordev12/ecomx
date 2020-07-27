@@ -77,7 +77,7 @@ HandleSubmit =  event=> {
                
                
                 <li className="list-group-item d-flex justify-content-between">
-                  <span>Total (USD)</span>
+                  <span>Total (PKR)</span>
       <strong>{cartTotal}</strong>
                 </li>
               </ul>
